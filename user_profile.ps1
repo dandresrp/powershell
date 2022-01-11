@@ -18,6 +18,7 @@ Import-Module -Name Terminal-Icons
 # Prompt
 $omp_config = Join-Path $PSScriptRoot "\.dandresrp.omp.json"
 oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
+$env:POSH_GIT_ENABLED = $true
 
 $pwshconfig = Join-Path $HOME "\.config\powershell\user_profile.ps1"
 $pwshpath = Join-Path $HOME "\.config\powershell\"
