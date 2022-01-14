@@ -1,23 +1,15 @@
-<# if (!(Get-Module "oh-my-posh")) {
-    Install-Module oh-my-posh -Scope CurrentUser -Force
-}
+<# Install-Module oh-my-posh -Scope CurrentUser -Force
+Install-Module -Name posh-git -Scope CurrentUser -Force
+Install-Module -Name Terminal-Icons -Scope CurrentUser -Force #>
 
-if (!(Get-Module "posh-git")) {
-    Install-Module -Name posh-git -Scope CurrentUser -Force
-}
+Clear-Host
 
-if (!(Get-Module "Terminal-Icons")) {
-    Install-Module -Name Terminal-Icons -Scope CurrentUser -Force
-} #>
-
-clear
-
-# Modules
+<# Modules #>
 Import-Module posh-git
 Import-Module oh-my-posh
 Import-Module -Name Terminal-Icons
 
-# Prompt
+<# Prompt #>
 $omp_config = Join-Path $PSScriptRoot "\.dandresrp.omp.json"
 oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
 $env:POSH_GIT_ENABLED = $true
@@ -25,8 +17,5 @@ $env:POSH_GIT_ENABLED = $true
 $pwshconfig = Join-Path $HOME "\.config\powershell\user_profile.ps1"
 $pwshpath = Join-Path $HOME "\.config\powershell\"
 
-# Aliases
-#Set-Alias vim nvim
-#Set-Alias ll ls
-#Set-Alias g git
+<# Aliases #>
 Set-Alias touch ni
