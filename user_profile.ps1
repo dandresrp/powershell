@@ -10,6 +10,8 @@ if (!(Get-Module "Terminal-Icons")) {
     Install-Module -Name Terminal-Icons -Scope CurrentUser -Force
 } #>
 
+clear
+
 # Modules
 Import-Module posh-git
 Import-Module oh-my-posh
