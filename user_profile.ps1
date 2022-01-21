@@ -1,3 +1,6 @@
+# set PowerShell to UTF-8
+[console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
+
 <# Install-Module oh-my-posh -Scope CurrentUser -Force
 Install-Module -Name posh-git -Scope CurrentUser -Force
 Install-Module -Name Terminal-Icons -Scope CurrentUser -Force #>
@@ -10,7 +13,7 @@ Import-Module oh-my-posh
 Import-Module -Name Terminal-Icons
 
 <# Prompt #>
-$omp_config = Join-Path $PSScriptRoot "\.dandresrp.omp.json"
+$omp_config = Join-Path $PSScriptRoot "\.star.omp.json"
 oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
 $env:POSH_GIT_ENABLED = $true
 
@@ -19,3 +22,4 @@ $pwshpath = Join-Path $HOME "\.config\powershell\"
 
 <# Aliases #>
 Set-Alias touch ni
+Set-Alias vim nvim

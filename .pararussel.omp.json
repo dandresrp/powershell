@@ -1,0 +1,87 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#ffffff",
+          "properties": {
+            "prefix": "",
+            "text": "<#C591E8>❯</><#69FF94>❯</>"
+          },
+          "style": "plain",
+          "type": "text"
+        },
+        {
+          "foreground": "#56B6C2",
+          "properties": {
+            "prefix": "",
+            "style": "folder"
+          },
+          "style": "plain",
+          "type": "path"
+        },
+        {
+          "foreground": "#D0666F",
+          "properties": {
+            "branch_icon": "",
+            "postfix": "<#5FAAE8>)</>",
+            "prefix": "<#5FAAE8>git:(</>",
+            "branch_max_length": 25,
+						"fetch_stash_count": true,
+						"fetch_status": true,
+						"fetch_upstream_icon": true,
+						"template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}"
+          },
+          "style": "plain",
+          "type": "git"
+        },
+        {
+          "foreground": "#DCB977",
+          "properties": {
+            "template": ""
+          },
+          "style": "plain",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#ffffff",
+          "properties": {
+            "command": "git log --pretty=format:%cr -1 || date +%H:%m:%S",
+            "shell": "pwsh"
+          },
+          "style": "plain",
+          "type": "command"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#ffffff",
+          "properties": {
+            "prefix": "",
+            "text": ""
+          },
+          "style": "plain",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title": true,
+	"console_title_style": "template",
+	"console_title_template": "{{ .Shell }} in {{ .Folder }}",
+	"final_space": true
+}
