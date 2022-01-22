@@ -15,9 +15,18 @@
           "type": "root"
         },
         {
+          "foreground": "#ffffff",
+          "properties": {
+            "prefix": "",
+            "text": "<#C591E8>❯</><#69FF94>❯</>"
+          },
+          "style": "plain",
+          "type": "text"
+        },
+        {
           "foreground": "#55B9C4",
           "properties": {
-            "prefix": " ",
+            "prefix": "",
             "style": "folder"
           },
           "style": "plain",

@@ -1,12 +1,3 @@
-# set PowerShell to UTF-8
-[console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
-
-<# Install-Module oh-my-posh -Scope CurrentUser -Force
-Install-Module -Name posh-git -Scope CurrentUser -Force
-Install-Module -Name Terminal-Icons -Scope CurrentUser -Force #>
-
-Clear-Host
-
 <# Modules #>
 Import-Module posh-git
 Import-Module oh-my-posh
