@@ -1,3 +1,4 @@
+#Install-Module -Name Terminal-Icons
 Import-Module -Name Terminal-Icons
 
 $pwshconfig = Join-Path $HOME "\.config\powershell\user_profile.ps1"
